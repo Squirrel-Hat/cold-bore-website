@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cold Bore - Shot group analysis for your phone</title>
+<meta name="description" content="Cold Bore measures your shot groups from a photo of the target. Mean radius with confidence intervals, a library of every group, and trends over time. Private, on-device, no subscription.">
+<meta name="theme-color" content="#1F3323">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cold-bore.app/">
+<meta property="og:title" content="Cold Bore - Analyze your targets. Track your skill over time.">
+<meta property="og:description" content="Measure shot groups from a photo of the target. Private, on-device, no subscription.">
+<meta property="og:image" content="https://cold-bore.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!--
+  Google Play link: while the app is unreleased, every element with
+  [data-play-link] shows "Coming soon". When the listing is live, set
+  PLAY_URL in js/main.js and the buttons become real links.
+-->
+
+<header class="cb-hero" id="top">
+  <nav class="cb-nav">
+    <a href="#top" class="cb-brand">
+      <img src="assets/apple-touch-icon.png" alt="" width="36" height="36">
+      Cold Bore
+    </a>
+    <div class="cb-nav-links">
+      <a href="#how">How it works</a>
+      <a href="#stats">The numbers</a>
+      <a href="#privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <div class="cb-hero-inner">
+    <div class="cb-hero-copy">
+      <p class="cb-kicker">Shot group analysis for Android</p>
+      <h1>Analyze your targets. <span class="cb-gold">Track your skill</span> over time.</h1>
+      <p class="cb-lede">Take a photo of your target, tap the holes, and Cold Bore measures the group. Every group is saved with the firearm, ammo and distance, so you can see whether you're actually getting better.</p>
+      <div class="cb-hero-actions">
+        <a class="cb-play" data-play-link aria-disabled="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5Z"/></svg>
+          <span>
+            <small data-play-small>Coming soon to</small>
+            Google Play
+          </span>
+        </a>
+      </div>
+      <p class="cb-tagline"><b>Private</b> <span>•</span> <b>No subscription</b> <span>•</span> <b>No account</b></p>
+    </div>
+
+    <div class="cb-hero-phones" aria-hidden="true">
+      <div class="cb-phone cb-phone--back"><img src="assets/screens/stats.webp" alt="" width="540" height="1205"></div>
+      <div class="cb-phone cb-phone--front"><img src="assets/screens/mark-holes.webp" alt="" width="540" height="1205"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="cb-section" id="how">
+    <div class="cb-wrap">
+      <p class="cb-eyebrow">How it works</p>
+      <h2>From paper to numbers in three steps.</h2>
+      <p class="cb-section-lede">No special targets and no extra hardware. Any target with a known measurement works.</p>
+
+      <ol class="cb-steps">
+        <li class="cb-step">
+          <div class="cb-phone"><img src="assets/screens/photograph.webp" alt="Cold Bore screen: Photograph the target, with Take photo and Upload buttons" width="540" height="1205" loading="lazy"></div>
+          <span class="cb-step-num">01</span>
+          <h3>Photograph the target</h3>
+          <p>Take a photo at the range or pick one from your gallery. Hold the camera flat and fill the frame.</p>
+        </li>
+        <li class="cb-step">
+          <div class="cb-phone"><img src="assets/screens/align-scale.webp" alt="Cold Bore screen: Align and set scale, with four corner handles and a 6 inch scale line on the target" width="540" height="1205" loading="lazy"></div>
+          <span class="cb-step-num">02</span>
+          <h3>Align and set scale</h3>
+          <p>Drag four corners to fix the perspective, then mark a known distance so every measurement is in real inches or centimetres.</p>
+        </li>
+        <li class="cb-step">
+          <div class="cb-phone"><img src="assets/screens/mark-holes.webp" alt="Cold Bore screen: Mark holes, with a magnifying loupe over a bullet hole" width="540" height="1205" loading="lazy"></div>
+          <span class="cb-step-num">03</span>
+          <h3>Mark the holes</h3>
+          <p>Tap each hole. A magnifier follows your finger so you can place it precisely. Set your point of aim and save.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cb-section cb-section--dark" id="stats">
+    <div class="cb-wrap cb-split">
+      <div class="cb-split-copy">
+        <p class="cb-eyebrow">The numbers</p>
+        <h2>Honest statistics, not just a ruler.</h2>
+        <p>Three shots don't tell you much, and Cold Bore says so. Every result comes with a 95% confidence interval, so you can tell real improvement from a lucky group.</p>
+        <dl class="cb-metrics">
+          <div><dt>Mean radius</dt><dd>The average distance from each shot to the group's centre. More stable than extreme spread.</dd></div>
+          <div><dt>Extreme spread</dt><dd>The classic centre-to-centre measurement, for comparing with everyone else.</dd></div>
+          <div><dt>CEP &amp; σ</dt><dd>Circular error probable and standard deviation, for when you want to go deeper.</dd></div>
+          <div><dt>Point-of-aim offset</dt><dd>How far the group sits from where you aimed, to help you zero.</dd></div>
+        </dl>
+      </div>
+      <div class="cb-split-media">
+        <div class="cb-phone"><img src="assets/screens/stats-sample-set.webp" alt="Cold Bore Statistics screen: combined mean radius of 0.19 inches across 2 groups and 6 shots, with a 95% confidence interval" width="540" height="1205" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cb-section">
+    <div class="cb-wrap">
+      <p class="cb-eyebrow">Your record</p>
+      <h2>Every group, kept.</h2>
+      <p class="cb-section-lede">A logbook that does the maths. Combine groups across range days to get a sample size that means something.</p>
+
+      <div class="cb-features">
+        <div class="cb-feature">
+          <div class="cb-feature-shot"><img src="assets/screens/library.webp" alt="Cold Bore Library screen listing saved groups with their mean radius" width="540" height="1205" loading="lazy"></div>
+          <h3>Library</h3>
+          <p>Search and filter every group by firearm, ammo, attachment or distance.</p>
+        </div>
+        <div class="cb-feature">
+          <div class="cb-feature-shot"><img src="assets/screens/stats.webp" alt="Cold Bore chart of mean radius over time" width="540" height="1205" loading="lazy"></div>
+          <h3>Trends over time</h3>
+          <p>Combine groups from one firearm and watch mean radius change from session to session.</p>
+        </div>
+        <div class="cb-feature">
+          <div class="cb-feature-shot"><img src="assets/screens/armory.webp" alt="Cold Bore Armory screen editing a rifle's nickname, caliber and icon" width="540" height="1205" loading="lazy"></div>
+          <h3>Armory</h3>
+          <p>Keep your firearms, ammo and attachments, and see which setup actually shoots best.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cb-section cb-section--tint" id="privacy">
+    <div class="cb-wrap cb-privacy">
+      <div>
+        <p class="cb-eyebrow">Privacy</p>
+        <h2>Your data never leaves your phone.</h2>
+        <p>Cold Bore has no internet permission. It can't send anything to us or anyone else. There are no accounts, ads, analytics or tracking. Photos are stripped of GPS and camera metadata before they're stored.</p>
+        <p>Back up whenever you like by exporting a file and putting it wherever you choose.</p>
+        <p><a class="cb-link" href="https://squirrelhat.org/cold-bore/privacy/">Read the full privacy policy &rarr;</a></p>
+      </div>
+      <ul class="cb-checks">
+        <li>No internet access</li>
+        <li>No account or sign-in</li>
+        <li>No ads or analytics</li>
+        <li>No subscription</li>
+        <li>Export your data any time</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cb-cta">
+    <div class="cb-wrap">
+      <img src="assets/apple-touch-icon.png" alt="" width="72" height="72" class="cb-cta-icon">
+      <h2>Measure your next group.</h2>
+      <p>Cold Bore is coming to Android soon.</p>
+      <a class="cb-play" data-play-link aria-disabled="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5Z"/></svg>
+        <span>
+          <small data-play-small>Coming soon to</small>
+          Google Play
+        </span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cb-footer">
+  <div class="cb-wrap cb-footer-inner">
+    <div class="cb-footer-brand">
+      <img src="assets/favicon-32.png" alt="" width="24" height="24">
+      Cold Bore <span>by <a href="https://squirrelhat.org">Squirrel Hat LLC</a></span>
+    </div>
+    <div class="cb-footer-links">
+      <a href="https://squirrelhat.org/cold-bore/privacy/">Privacy policy</a>
+      <a href="mailto:info@squirrelhat.org">info@squirrelhat.org</a>
+      <span>© 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
