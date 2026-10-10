@@ -209,44 +209,37 @@ a { color: inherit; }
   transform: rotate(4deg);
 }
 
-/* ---------- Play button ---------- */
+/* ---------- Google Play badge ----------
+   Official artwork from Google's Partner Marketing Hub. Per their badge
+   guidelines: don't recolor or edit it, keep it at least 28px tall, and keep
+   clear space of 1/4 the badge height (14px at 56px) on every side. */
 
 .cb-play {
   display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 22px 12px 18px;
-  border-radius: 12px;
-  background: var(--gold);
-  color: var(--green-950);
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.1;
-  transition: transform 0.15s, background 0.15s;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.cb-play svg { width: 24px; height: 24px; fill: currentColor; flex: none; }
-
-.cb-play small {
-  display: block;
+.cb-play .cb-play-note {
+  margin: 0;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.8;
-}
-
-.cb-play[href]:hover { transform: translateY(-1px); background: #E4BF4A; }
-
-.cb-play[aria-disabled="true"] {
-  cursor: default;
-  background: transparent;
   color: var(--gold);
-  box-shadow: inset 0 0 0 1.5px rgba(217, 178, 58, 0.6);
 }
+
+.cb-play-badge {
+  display: block;
+  margin: -2px -14px -14px; /* 14px clear space, offset so the badge aligns with the text */
+  padding: 14px;
+  transition: transform 0.15s;
+}
+
+.cb-play-badge img { display: block; width: auto; height: 56px; }
+
+.cb-play-badge[href]:hover { transform: translateY(-1px); }
 
 /* ---------- Sections ---------- */
 
@@ -448,6 +441,8 @@ a { color: inherit; }
   box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.5);
 }
 
+.cb-cta .cb-play { align-items: center; }
+
 .cb-cta p {
   margin: 14px 0 32px;
   font-size: 19px;
@@ -492,6 +487,12 @@ a { color: inherit; }
   display: flex;
   flex-wrap: wrap;
   gap: 8px 24px;
+}
+
+.cb-legal {
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.6;
 }
 
 .cb-footer a { text-decoration: none; }

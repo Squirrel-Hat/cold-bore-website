@@ -25,9 +25,11 @@
 <body>
 
 <!--
-  Google Play link: while the app is unreleased, every element with
-  [data-play-link] shows "Coming soon". When the listing is live, set
-  PLAY_URL in js/main.js and the buttons become real links.
+  Google Play link: while the app is unreleased, every [data-play-link]
+  badge is unlinked and a "Coming soon" note shows above it. When the
+  listing is live, set PLAY_URL in js/main.js and the badges become links.
+  The badge is Google's official artwork: don't recolor, crop or edit it,
+  keep it at least 28px tall, and keep clear space of 1/4 its height.
 -->
 
 <header class="cb-hero" id="top">
@@ -49,13 +51,12 @@
       <h1>Analyze your targets. <span class="cb-gold">Track your skill</span> over time.</h1>
       <p class="cb-lede">Take a photo of your target, tap the holes, and Cold Bore measures the group. Every group is saved with the firearm, ammo and distance, so you can see whether you're actually getting better.</p>
       <div class="cb-hero-actions">
-        <a class="cb-play" data-play-link aria-disabled="true">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5Z"/></svg>
-          <span>
-            <small data-play-small>Coming soon to</small>
-            Google Play
-          </span>
-        </a>
+        <div class="cb-play">
+          <p class="cb-play-note" data-play-note>Coming soon</p>
+          <a class="cb-play-badge" data-play-link aria-disabled="true">
+            <img src="assets/badges/get-it-on-google-play.svg" alt="Get it on Google Play" width="189" height="56">
+          </a>
+        </div>
       </div>
       <p class="cb-tagline"><b>Private</b> <span>•</span> <b>No subscription</b> <span>•</span> <b>No account</b></p>
     </div>
@@ -167,13 +168,12 @@
       <img src="assets/apple-touch-icon.png" alt="" width="72" height="72" class="cb-cta-icon">
       <h2>Measure your next group.</h2>
       <p>Cold Bore is coming to Android soon.</p>
-      <a class="cb-play" data-play-link aria-disabled="true">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14-8.5a.5.5 0 0 0 0-.86l-14-8.5A.5.5 0 0 0 5 3.5Z"/></svg>
-        <span>
-          <small data-play-small>Coming soon to</small>
-          Google Play
-        </span>
-      </a>
+      <div class="cb-play">
+        <p class="cb-play-note" data-play-note>Coming soon</p>
+        <a class="cb-play-badge" data-play-link aria-disabled="true">
+          <img src="assets/badges/get-it-on-google-play.svg" alt="Get it on Google Play" width="189" height="56">
+        </a>
+      </div>
     </div>
   </section>
 
@@ -191,6 +191,7 @@
       <span>© 2026</span>
     </div>
   </div>
+  <p class="cb-wrap cb-legal">Google Play and the Google Play logo are trademarks of Google LLC.</p>
 </footer>
 
 <script src="js/main.js"></script>

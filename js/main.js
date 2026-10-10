@@ -1,8 +1,8 @@
 (function () {
   "use strict";
 
-  // Google Play listing. Leave empty until the app is live; the buttons then
-  // show "Coming soon". When it is published, set this to:
+  // Google Play listing. Leave empty until the app is live; the badges then
+  // stay unlinked under a "Coming soon" note. When it is published, set this to:
   //   https://play.google.com/store/apps/details?id=org.squirrelhat.coldbore
   var PLAY_URL = "";
 
@@ -13,7 +13,8 @@
     var btn = buttons[i];
     btn.href = PLAY_URL;
     btn.removeAttribute("aria-disabled");
-    var small = btn.querySelector("[data-play-small]");
-    if (small) small.textContent = "Get it on";
   }
+
+  var notes = document.querySelectorAll("[data-play-note]");
+  for (var j = 0; j < notes.length; j++) notes[j].hidden = true;
 })();
